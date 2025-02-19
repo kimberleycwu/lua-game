@@ -5,17 +5,36 @@ game.mouseX = 0
 game.mouseY = 0
 
 game.pipes = {
-    {   image = nil, 
-        file = "assets/t-pipe.png",
-        x = windowX/3,
-        y = windowY/2,
-        rotation = 0    },
-    {   image = nil,
+    {
+        image = nil, 
+        file = "assets/l-pipe.png",
+        x = windowX/7 - 80,
+        y = windowY/4 - 80,
+        rotation = 270
+    },
+    {
+        image = nil,
         file = "assets/i-pipe.png",
-        x = 2*windowX/3,
-        y = windowY/2,
-        rotation = 0    }
+        x = 2*windowX/7 - 80,
+        y = windowY/4 - 80,
+        rotation = 0
+    },
+    {
+        image = nil,
+        file = "assets/t-pipe.png",
+        x = 3*windowX/7 - 80,
+        y = windowY/4 - 80,
+        rotation = 90
+    },
+    {
+        image = nil,
+        file = "assets/l-pipe.png",
+        x = 4*windowX/7 - 80,
+        y = windowY/4 - 80,
+        rotation = 270
+    }
 }
+-- should be 30 pipes TOTAL
 
 function love.load()
     love.window.setTitle('pipes_minigame')
@@ -58,14 +77,15 @@ function love.draw()
     -- draw pipes
     for i, pipe in ipairs (game.pipes) do
         love.graphics.draw(
-            pipe.image, 
+            pipe.image,
             pipe.x, pipe.y,
             math.rad(pipe.rotation),
-            0.5, 0.5,
+            0.2, 0.2,
             pipe.image:getWidth()/2, pipe.image:getHeight()/2
         )
-    local text = string.format("Pipe %d Rotation: %d°", i, pipe.rotation)
-    love.graphics.print(text, 10, 10 + (i - 1) * 20)  -- vertical offset text
+    -- DEBUG
+    -- local text = string.format("Pipe %d Rotation: %d°", i, pipe.rotation)
+    -- love.graphics.print(text, 10, 10 + (i - 1) * 20)  -- vertical offset text
     end
     --
 end
