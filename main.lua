@@ -6,12 +6,12 @@ game.mouseY = 0
 
 game.pipes = {
     {   image = nil, 
-        file = "assets/trash-can.png",
+        file = "assets/t-pipe.png",
         x = windowX/3,
         y = windowY/2,
         rotation = 0    },
     {   image = nil,
-        file = "assets/trash-can.png",
+        file = "assets/i-pipe.png",
         x = 2*windowX/3,
         y = windowY/2,
         rotation = 0    }
@@ -40,7 +40,7 @@ function love.mousepressed(x, y, button, istouch, presses)
             local halfWidth, halfHeight = imgWidth / 2, imgHeight / 2
             if x >= pipe.x - halfWidth and x <= pipe.x + halfWidth and
                y >= pipe.y - halfHeight and y <= pipe.y + halfHeight then
-                pipe.rotation = (pipe.rotation + 45) % 360 -- Rotate independently
+                pipe.rotation = (pipe.rotation + 90) % 360 -- saves as degrees
             end
         end
     end
