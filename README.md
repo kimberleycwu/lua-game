@@ -1,4 +1,5 @@
 # lua-game
+*staging and iterative testing for this game can be found [here](https://github.com/kimberleycwu/lua-game-staging)*
 ### working title: hop to it! (with a carrot as the !)
 Sunday is Bun's favorite day of the week. Why? Well, because she gets to visit Grammy, of course!
 </br>
